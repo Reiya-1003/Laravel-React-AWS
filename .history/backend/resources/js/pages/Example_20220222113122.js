@@ -12,7 +12,6 @@ function Example() {
 
                         <div className="card-body">I'm an example component!</div>
                         <Button color="primary" variant="contained"> materialButton</Button>
-                        <Button color="secondary" variant="contained"> Home遷移</Button>
                        {/* 画面に反映まで時間差あるくさい */}
                     </div>
                 </div>

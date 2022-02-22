@@ -3,21 +3,17 @@ import ReactDOM from 'react-dom';
 import {
     BrowserRouter,
     Route,
-    Router,
-    Routes,
+    Switch,
   } from 'react-router-dom';
-import Example from './pages/Example.js';
+import Example from './pages/Example';
 
   function App() {
     return (
-
-
-            <Routes>
+        <div>
+            <Switch>
              {/* ここに、pathと対応するコンポーネントを書いていく */}
-              <Route path='/' exact element={<Example/>}/>
-            </Routes>
-
-
+            </Switch>
+        </div>
     );
 }
 

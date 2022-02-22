@@ -10,14 +10,14 @@ import Example from './pages/Example.js';
 
   function App() {
     return (
-
+        <BrowserRouter>
 
             <Routes>
              {/* ここに、pathと対応するコンポーネントを書いていく */}
               <Route path='/' exact element={<Example/>}/>
             </Routes>
 
-
+        </BrowserRouter>
     );
 }
 
