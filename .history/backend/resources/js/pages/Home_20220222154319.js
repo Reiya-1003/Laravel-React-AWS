@@ -10,7 +10,12 @@ const useStyles = makeStyles((them)=> createStyles({
         margin: them.spacing(5),
         padding: them.spacing(3),
     },
-
+    table:{
+        maxWidth:650,
+    },
+    tableHead:{
+        backgroundColor: purple['A100']
+    },
 }));
 
 //ヘッダーのコンテンツ用の配列定義
@@ -40,7 +45,7 @@ function Home() {
                   <div className="card">
                     <h1>タスク管理</h1>
                     <Card className={classes.card}>
-                    　 <MainTable headerList={headerList} rows={rows}/>
+                    　
                     </Card>
                   </div>
 

@@ -1,7 +1,14 @@
 import React from 'react';
 import { Button, Card } from '@material-ui/core';
 import { makeStyles, createStyles, ThemeProvider } from '@material-ui/core/styles';
-import MainTable from '../components/MainTable'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import purple from '@material-ui/core/colors/purple';
 
 //スタイルの定義
 const useStyles = makeStyles((them)=> createStyles({
@@ -10,7 +17,12 @@ const useStyles = makeStyles((them)=> createStyles({
         margin: them.spacing(5),
         padding: them.spacing(3),
     },
-
+    table:{
+        maxWidth:650,
+    },
+    tableHead:{
+        backgroundColor: purple['A100']
+    },
 }));
 
 //ヘッダーのコンテンツ用の配列定義
@@ -40,7 +52,7 @@ function Home() {
                   <div className="card">
                     <h1>タスク管理</h1>
                     <Card className={classes.card}>
-                    　 <MainTable headerList={headerList} rows={rows}/>
+                    　
                     </Card>
                   </div>
 
