@@ -16,7 +16,7 @@ import Home from './pages/Home.js'
             <Routes>
              {/* ここに、pathと対応するコンポーネントを書いていく */}
               <Route path='/example' exact element={<Example/>}/>
-              <Route path='/' exact element={<Home/>}/>
+              <Route path='/' exact component={<Home/>}/>
             </Routes>
 
 
