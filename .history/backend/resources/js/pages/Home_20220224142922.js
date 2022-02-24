@@ -4,9 +4,6 @@ import { Button, Card } from '@material-ui/core';
 import { makeStyles, createStyles, ThemeProvider } from '@material-ui/core/styles';
 import MainTable from '../components/MainTable'
 
-
-
-
 //スタイルの定義
 const useStyles = makeStyles((them)=> createStyles({
     card:{
@@ -20,39 +17,23 @@ const useStyles = makeStyles((them)=> createStyles({
 //ヘッダーのコンテンツ用の配列定義
 const headerList = ['名前', 'タスク内容', '編集', '完了'];
 
-
+let rows = [
+    {
+        name: "森田ひかる",
+        content: "MV撮影",
+        editBtn: <Button　color="secondary" variant="contained">編集</Button>,
+        deleteBtn: <Button　color="primary" variant="contained">完了</Button>
+    },{
+        name: "東村芽依",
+        content: "雑誌撮影",
+        editBtn: <Button　color="secondary" variant="contained">編集</Button>,
+        deleteBtn: <Button　color="primary" variant="contained">完了</Button>
+    }
+]
 
 
 function Home() {
     const classes = useStyles();
-    const [posts,setPosts] = useState([]);
-   console.log(posts)
-    useEffect(()=>{
-        getPostsData();
-    },[])
-
-    const getPostsData = ()=>{
-        axios.get('/api/posts').then(response =>{
-            setPosts(response.data);
-            console.log(response.data);})
-            .catch(()=>{
-                console.log('通信に失敗');
-            });
-    }
-
-    let rows = [];
-
-    posts.map((post)=>
-      rows.push({
-          name : post.name,
-          content: post.content,
-          editBtn: <Button color="secondary" variant="contained">編集</Button>,
-          deleteBtn: <Button color="primary" variant="contained">完了</Button>
-      }))
-
-
-
-
     return (
         <div className="container">
             <div className="row justify-content-center">
