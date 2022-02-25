@@ -59,7 +59,7 @@ function Home() {
       rows.push({
           name : post.name,
           content: post.content,
-          editBtn: <Button color="secondary" variant="contained" key={post.id} href={`post/edit/${post.id}`}>編集</Button>,
+          editBtn: <Button color="secondary" variant="contained">編集</Button>,
           deleteBtn: <Button color="primary" variant="contained">完了</Button>
       }))
 
@@ -69,7 +69,7 @@ function Home() {
         return;
         }
         //入力値をなげる
-        await axios.post('/api/posts/create',{
+        await axios.post('/api/post/create',{
             name: formData.name,
             content: formData.content
         })

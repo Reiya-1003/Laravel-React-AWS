@@ -59,7 +59,7 @@ function Home() {
       rows.push({
           name : post.name,
           content: post.content,
-          editBtn: <Button color="secondary" variant="contained" key={post.id} href={`post/edit/${post.id}`}>編集</Button>,
+          editBtn: <Button color="secondary" variant="contained">編集</Button>,
           deleteBtn: <Button color="primary" variant="contained">完了</Button>
       }))
 
@@ -69,7 +69,7 @@ function Home() {
         return;
         }
         //入力値をなげる
-        await axios.post('/api/posts/create',{
+        await axios.post('/api/post/create',{
             name: formData.name,
             content: formData.content
         })
@@ -92,7 +92,7 @@ function Home() {
                   <div className="card">
                     <h1>タスク管理</h1>
                     <Card className={classes.card}>
-                        <PostFrom data={formData} btnFunc={createPost} inputChange={inputChange}/>
+                        <PostFrom data={formData} inputChange={inputChange}/>
                     </Card>
                     <Card className={classes.card}>
                     　 <MainTable headerList={headerList} rows={rows}/>

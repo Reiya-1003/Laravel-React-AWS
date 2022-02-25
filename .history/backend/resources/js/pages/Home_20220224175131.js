@@ -33,7 +33,7 @@ function Home() {
     useEffect(()=>{
         getPostsData();
     },[])
-　　　//一覧情報を取得しステートpostsにセットする
+
     const getPostsData = ()=>{
         axios.get('/api/posts').then(response =>{
             setPosts(response.data);
@@ -42,48 +42,19 @@ function Home() {
                 console.log('通信に失敗');
             });
     }
-　　　//入力がされたら入力値を変更するfunction
 
-    const inputChange =(e)=>{
-        const key = e.target.name;
-        const value = e.target.value;
-        formData[key] = value;
-        let data = Object.assign({},formData);
-        //Object.assign() メソッドは、すべての列挙可能な自身のプロパティの値を、
-       // 1 つ以上のコピー元オブジェクトからコピー先オブジェクトにコピーするために使用されます
-        setFormData(data);
-    }
     let rows = [];
 
     posts.map((post)=>
       rows.push({
           name : post.name,
           content: post.content,
-          editBtn: <Button color="secondary" variant="contained" key={post.id} href={`post/edit/${post.id}`}>編集</Button>,
+          editBtn: <Button color="secondary" variant="contained">編集</Button>,
           deleteBtn: <Button color="primary" variant="contained">完了</Button>
       }))
 
 
-　　　const createPost = async()=>{
-    if(formData == ''){
-        return;
-        }
-        //入力値をなげる
-        await axios.post('/api/posts/create',{
-            name: formData.name,
-            content: formData.content
-        })
-        .then((res) =>{
-            //戻り値をtodosにセット
-            const tempPosts = posts
-            tempPosts.push(res.data);
-            setPosts(tempPosts)
-            setFormData('');
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }
+
 
     return (
         <div className="container">
@@ -92,7 +63,7 @@ function Home() {
                   <div className="card">
                     <h1>タスク管理</h1>
                     <Card className={classes.card}>
-                        <PostFrom data={formData} btnFunc={createPost} inputChange={inputChange}/>
+                        <PostFrom/>
                     </Card>
                     <Card className={classes.card}>
                     　 <MainTable headerList={headerList} rows={rows}/>

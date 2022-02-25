@@ -17,27 +17,27 @@ class PostController extends Controller
 
    public function create(Request $request)
    {
-       $posts = new Post;
-       $posts->name = $request->name;
-       $posts->content = $request->content;
-       $posts->save();
-       return response()->json($posts,200);
+       $post = new Post;
+       $post->name = $request->name;
+       $post->content = $request->content;
+       $post->save();
+       return response()->json($post,200);
     }
 
     //編集画面に遷移するためのアクション
     public function edit(Request $request)
     {
-        $posts = Post::find($request->id);
-        return $posts;
+        $post = Post::find($request->id);
+        return $post;
     }
 
     //データを更新するためのアクション
     public function update(Request $request)
     {
-        $posts = Post::find($request->id);
-        $posts->name = $request->name;
-        $posts->content = $request->content;
-        $posts->save();
+        $post = Post::find($request->id);
+        $post->name = $request->name;
+        $post->content = $request->content;
+        $post->save();
         $posts = Post::all();
         return $posts;
     }

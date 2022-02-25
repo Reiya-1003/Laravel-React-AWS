@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => 'api'], function(){
-    Route::get('posts', 'App\Http\Controllers\Api\PostController@index');
-    Route::post('posts/create', 'App\Http\Controllers\Api\PostController@create');
+    Route::get('posts','App\Http\Controllers\Api\PostController@index');
+    Route::post('post/create', 'APP\Http\Controllers\Api\PostController@create');
     Route::post('edit', 'APP\Http\Controllers\Api\PostController@edit');
     Route::post('update', 'APP\Http\Controllers\Api\PostController@update');
 });
