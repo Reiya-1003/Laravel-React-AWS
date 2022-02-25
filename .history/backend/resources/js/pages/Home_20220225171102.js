@@ -86,7 +86,7 @@ function Home() {
         })
     }
 
-    const deletePost = async(post)=>{
+    const deletePost = async(post){
         await axios.post('/api/delete',{
             id:post.id
         })

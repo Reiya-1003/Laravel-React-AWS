@@ -59,7 +59,7 @@ function Home() {
             user_name: rowData.name,
             post: rowData.content,
             btn: <Button color="secondary" variant="contained" key={rowData.id} href={`/post/edit/${rowData.id}`}>編集</Button>,
-            deleteBtn: <Button color="primary" variant="contained" href="/" onClick={() => deletePost(rowData)}>完了</Button>
+            deleteBtn: <Button color="primary" variant="contained" href="/" onClick={() => deletePost(post)}>完了</Button>
         })
     );
 
@@ -86,7 +86,7 @@ function Home() {
         })
     }
 
-    const deletePost = async(post)=>{
+    const deletePost = async(post){
         await axios.post('/api/delete',{
             id:post.id
         })

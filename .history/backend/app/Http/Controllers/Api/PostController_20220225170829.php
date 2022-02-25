@@ -41,8 +41,8 @@ class PostController extends Controller
 
     public function delete(Request $request)
     {
-        $posts =  Post::find($request->id);
-        $posts->delete();
+        $post =  Post::find($request->id);
+        $post->delete();
         $posts = Post::all();
         return $posts;
     }
