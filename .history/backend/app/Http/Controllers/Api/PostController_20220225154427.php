@@ -20,30 +20,31 @@ class PostController extends Controller
         $posts->name = $request->name;
         $posts->content = $request->content;
         $posts->save();
-        return response()->json($posts, 200);
+        $posts = Post::all();
+        return $posts;
     }
 
     public function edit(Request $request)
     {
-        $posts = Post::find($request->id);
-        return $posts;
+        $post = Post::find($request->id);
+        return $post;
     }
 
     public function update(Request $request){
-        $posts = Post::find($request->id);
-        $posts->name = $request->name;
-        $posts->content = $request->content;
-        $posts->save();
+        $post = Post::find($request->id);
+        $post->name = $request->name;
+        $post->content = $request->content;
+        $post->save();
         $posts = Post::all();
         return $posts;
 
     }
 
-    // public function delete(Request $request)
-    // {
-    //     $post =  Post::find($request->id);
-    //     $post->delete();
-    //     $posts = Post::all();
-    //     return $posts;
-    // }
+    public function delete(Request $request)
+    {
+        $post =  Post::find($request->id);
+        $post->delete();
+        $posts = Post::all();
+        return $posts;
+    }
 }

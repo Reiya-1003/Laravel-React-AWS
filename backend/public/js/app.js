@@ -20073,18 +20073,23 @@ function Home() {
   };
 
   var rows = [];
-  posts.map(function (post) {
+  posts.map(function (rowData) {
     return rows.push({
-      name: post.name,
-      content: post.content,
-      editBtn: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      user_name: rowData.name,
+      post: rowData.content,
+      btn: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["default"], {
         color: "secondary",
         variant: "contained",
+        href: "/post/edit/".concat(rowData.id),
         children: "\u7DE8\u96C6"
-      }),
+      }, rowData.id),
       deleteBtn: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["default"], {
         color: "primary",
         variant: "contained",
+        href: "/",
+        onClick: function onClick() {
+          return deletePost(rowData);
+        },
         children: "\u5B8C\u4E86"
       })
     });
@@ -20097,14 +20102,15 @@ function Home() {
           switch (_context.prev = _context.next) {
             case 0:
               if (!(formData == '')) {
-                _context.next = 2;
+                _context.next = 3;
                 break;
               }
 
+              console.log(formData);
               return _context.abrupt("return");
 
-            case 2:
-              _context.next = 4;
+            case 3:
+              _context.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().post('/api/posts/create', {
                 name: formData.name,
                 content: formData.content
@@ -20118,7 +20124,7 @@ function Home() {
                 console.log(error);
               });
 
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -20177,13 +20183,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Card/Card.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_PostFrom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/PostFrom */ "./resources/js/components/PostFrom.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
+/* harmony import */ var _components_PostFrom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PostFrom */ "./resources/js/components/PostFrom.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -20203,18 +20208,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["default"])(function (theme) {
-  return (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["default"])({
+var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["default"])(function (theme) {
+  return (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["default"])({
     card: {
       margin: theme.spacing(5),
       padding: theme.spacing(3)
     }
   });
 });
+var headerList = ['名前', '一言', '編集'];
 
-var PostEdit = function PostEdit(props) {
+function PostEdit(props) {
   var classes = useStyles();
-  var params = props.match.params;
+  var params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)();
+  console.log(params);
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     name: '',
@@ -20228,54 +20235,54 @@ var PostEdit = function PostEdit(props) {
     getEditData();
   }, []);
 
-  var getEditData = function getEditData() {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/edit', {
+  function getEditData() {
+    axios.post('/api/post/edit', {
       id: params.id
     }).then(function (res) {
       setEditData(res.data);
     })["catch"](function () {
       console.log('通信に失敗しました');
     });
-  };
+  }
 
-  var updatePost = function updatePost() {
+  function updatePost() {
     if (editData == '') {
       return;
-    } //入力値
+    } //入力値を投げる
 
 
-    axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/update', {
+    axios.post('/api/post/update', {
       id: params.id,
       name: editData.name,
       content: editData.content
     }).then(function (res) {
       setEditData(res.data);
     })["catch"](function (error) {
-      console.log('updateError');
+      console.log(error);
     });
-  };
+  }
 
-  var inputChange = function inputChange(e) {
+  function inputChange(e) {
     var key = e.target.name;
     var value = e.target.value;
     editData[key] = value;
     var data = Object.assign({}, editData);
     setEditData(data);
-  };
+  }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "row justify-content-center",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "col-md-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "card",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
             children: "\u30BF\u30B9\u30AF\u7DE8\u96C6"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["default"], {
             className: classes.card,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_PostFrom__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_PostFrom__WEBPACK_IMPORTED_MODULE_1__["default"], {
               data: editData,
               inputChange: inputChange,
               btnFunc: updatePost
@@ -20285,7 +20292,7 @@ var PostEdit = function PostEdit(props) {
       })
     })
   });
-};
+}
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PostEdit);
 

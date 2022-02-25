@@ -50,8 +50,8 @@ function PostEdit(props) {
         }
         //入力値を投げる
         axios
-            .post('/api/post/update', {
-                id: params.id,
+            .post('/api/update', {
+                id: 1,
                 name: editData.name,
                 content: editData.content
             })

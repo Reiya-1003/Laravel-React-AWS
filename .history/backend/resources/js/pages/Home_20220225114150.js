@@ -66,7 +66,6 @@ function Home() {
 
 　　　const createPost = async()=>{
     if(formData == ''){
-        console.log(formData)
         return;
         }
         //入力値をなげる

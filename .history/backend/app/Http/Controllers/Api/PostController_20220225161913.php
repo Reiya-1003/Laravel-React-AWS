@@ -29,15 +29,15 @@ class PostController extends Controller
         return $posts;
     }
 
-    public function update(Request $request){
-        $posts = Post::find($request->id);
-        $posts->name = $request->name;
-        $posts->content = $request->content;
-        $posts->save();
-        $posts = Post::all();
-        return $posts;
+    // public function update(Request $request){
+    //     $post = Post::find($request->id);
+    //     $post->name = $request->name;
+    //     $post->content = $request->content;
+    //     $post->save();
+    //     $posts = Post::all();
+    //     return $posts;
 
-    }
+    // }
 
     // public function delete(Request $request)
     // {

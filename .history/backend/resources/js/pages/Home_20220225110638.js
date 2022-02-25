@@ -54,19 +54,18 @@ function Home() {
         setFormData(data);
     }
     let rows = [];
-    posts.map((rowData) =>
-        rows.push({
-            user_name: rowData.name,
-            post: rowData.content,
-            btn: <Button color="secondary" variant="contained" key={rowData.id} href={`/post/edit/${rowData.id}`}>編集</Button>,
-            deleteBtn: <Button color="primary" variant="contained" href="/" onClick={() => deletePost(rowData)}>完了</Button>
-        })
-    );
+
+    posts.map((post)=>
+      rows.push({
+          name : post.name,
+          content: post.content,
+          editBtn: <Button color="secondary" variant="contained" key={post.id} href={`post/edit/${post.id}`}>編集</Button>,
+          deleteBtn: <Button color="primary" variant="contained">完了</Button>
+      }))
 
 
 　　　const createPost = async()=>{
     if(formData == ''){
-        console.log(formData)
         return;
         }
         //入力値をなげる

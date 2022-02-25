@@ -1,8 +1,8 @@
-import React, { useState, useEffect,} from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { Card } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import PostFrom from '../components/PostFrom';
+import axios from 'axios'
 
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -12,16 +12,10 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
-const headerList = ['名前', '一言', '編集'];
-
-
 function PostEdit(props) {
     const classes = useStyles();
-   const params = useParams();
-   console.log(params)
-
-
-
+    console.log(props)
+    const params = props.match.params;
 
 
     const [editData, setEditData] = useState({name:'', content:''});
@@ -33,7 +27,7 @@ function PostEdit(props) {
 
     function getEditData(){
         axios
-            .post('/api/post/edit', {
+            .post('/api/edit', {
                 id: params.id
             })
             .then(res => {
@@ -44,24 +38,24 @@ function PostEdit(props) {
             });
     }
 
-    function updatePost(){
-        if(editData == ''){
-            return;
-        }
-        //入力値を投げる
-        axios
-            .post('/api/post/update', {
-                id: params.id,
-                name: editData.name,
-                content: editData.content
-            })
-            .then((res) => {
-                setEditData(res.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
+    // function updatePost(){
+    //     if(editData == ''){
+    //         return;
+    //     }
+    //     //入力値を投げる
+    //     axios
+    //         .post('/api/update', {
+    //             id: params.id,
+    //             name: editData.name,
+    //             content: editData.content
+    //         })
+    //         .then((res) => {
+    //             setEditData(res.data);
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    // }
 
     function inputChange(e){
         const key = e.target.name;
@@ -78,7 +72,7 @@ function PostEdit(props) {
                     <div className="card">
                         <h1>タスク編集</h1>
                         <Card className={classes.card}>
-                            <PostFrom data={editData}  inputChange={inputChange} btnFunc={updatePost}　/>
+                            <PostFrom data={editData}  inputChange={inputChange} 　/>
                         </Card>
                     </div>
                 </div>

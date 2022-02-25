@@ -58,7 +58,7 @@ function Home() {
         rows.push({
             user_name: rowData.name,
             post: rowData.content,
-            btn: <Button color="secondary" variant="contained" key={rowData.id} href={`/post/edit/${rowData.id}`}>編集</Button>,
+            btn: <Button color="secondary" variant="contained" key={rowData.id} href={`/post/edit/:${rowData.id}`}>編集</Button>,
             deleteBtn: <Button color="primary" variant="contained" href="/" onClick={() => deletePost(rowData)}>完了</Button>
         })
     );

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +16,7 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'api'], function(){
     Route::get('posts', 'App\Http\Controllers\Api\PostController@index');
-    Route::post('posts/create', 'App\Http\Controllers\Api\PostController@create');
-    // Route::post('delete', 'App\Http\Controllers\Api\PostController@delete');
-    Route::post('/post/edit', 'App\Http\Controllers\Api\PostController@edit');
-    Route::post('/post/update', 'App\Http\Controllers\Api\PostController@update');
-});
-
-// Route::get('/posts', 'Api\PostController@index');
-// Route::post('/create', 'Api\PostController@create');
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    Route::post('create', 'App\Http\Controllers\Api\PostController@create');
+    Route::post('edit', 'APP\Http\Controllers\Api\PostController@edit');
+    // Route::post('update', 'APP\Http\Controllers\Api\PostController@update');
 });

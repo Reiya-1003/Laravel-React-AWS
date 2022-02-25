@@ -18,8 +18,7 @@ import PostEdit from './pages/PostEdit'
              {/* ここに、pathと対応するコンポーネントを書いていく */}
               <Route path='/example' exact element={<Example/>}/>
               <Route path='/' exact element={<Home/>}/>
-              <Route path='/post/edit/:id' exact element={<PostEdit/>}/>
-
+              <Route path='/posts/edit/:id' exact element={<PostEdit/>}/>
             </Routes>
 
 
