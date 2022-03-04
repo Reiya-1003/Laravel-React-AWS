@@ -30,7 +30,7 @@ function MainTable (props){
     const {headerList,rows} = props; //親コンポーネントからpropsで受け取る
     return (
         <TableContainer component={Paper}>
-        <Table  aria-label="simple table">
+        <Table className={classes.table} aria-label="simple table">
              {/* ヘッダー部分 */}
             <TableHead className={classes.tableHead}>
               <TableRow>
