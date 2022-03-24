@@ -105,9 +105,9 @@ function Home() {
             <div className="row justify-content-center">
               <div className="col-md-10">
                   <div className="card">
-                    <h1 className="text-center">タスク管理</h1>
+                    <h1>タスク管理</h1>
                     <Card className={classes.card}>
-                        <PostFrom data={formData} btnFunc={createPost} inputChange={inputChange} />
+                        <PostFrom data={formData} btnFunc={createPost} inputChange={inputChange}/>
                     </Card>
                     <Card className={classes.card}>
                     　 <MainTable headerList={headerList} rows={rows}/>

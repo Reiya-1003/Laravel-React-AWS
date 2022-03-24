@@ -107,7 +107,7 @@ function Home() {
                   <div className="card">
                     <h1 className="text-center">タスク管理</h1>
                     <Card className={classes.card}>
-                        <PostFrom data={formData} btnFunc={createPost} inputChange={inputChange} />
+                        <PostFrom data={formData} btnFunc={createPost} inputChange={inputChange} className="text-center"/>
                     </Card>
                     <Card className={classes.card}>
                     　 <MainTable headerList={headerList} rows={rows}/>
