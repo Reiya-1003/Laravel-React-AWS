@@ -21,7 +21,12 @@
 # 機能面
 ## 基本的なCRUD処理
 ### Create（C）
+<img width="602" alt="スクリーンショット 2022-04-01 15 42 15" src="https://user-images.githubusercontent.com/80142183/161209940-f86dd7a8-41dc-4479-8c5f-fd0f0b9f7b8e.png">
+・「開発」の欄をCreate
 
+### Read（R）
+<img width="602" alt="スクリーンショット 2022-04-01 15 42 15" src="https://user-images.githubusercontent.com/80142183/161209940-f86dd7a8-41dc-4479-8c5f-fd0f0b9f7b8e.png">
+・「開発」の欄をCreate
 
 
 
