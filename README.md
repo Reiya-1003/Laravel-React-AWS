@@ -4,31 +4,26 @@
 
 
 
-# 使用言語
+# 使用言語・ツール
 * React.js  17.0.2
 * PHP  8.0.2
 * Laravel 9.0
 * MySQL
+* AWS EC2　（仮想環境構築・デプロイ）
+* Docker (ローカル開発環境の構築)
 
 
 # アーキテクチャ
-　　
+　　<img width="851" alt="スクリーンショット 2022-04-01 15 22 50" src="https://user-images.githubusercontent.com/80142183/161206918-2a7ec4e7-ada1-4bf5-a59e-a974c1193f56.png">
   
-
-  
-# デプロイ
-* フロントエンド　→ Vercel
-* バックエンド　→ pythonanywhere
-* cors → heroku (axiosでfetchする際にリクエストエラーが起きるため必要)
-
-
 
 
 # 機能面
-## Sassによるページデザイン
+## 基本的なCRUD処理
+### Create（C）
 
 
-・主にアニメーションをつけるのに役立つ。
+
 
 
 
