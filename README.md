@@ -29,8 +29,12 @@
 ・DBに保存された内容を一覧表示。（.map）
 
 ### Update（U）
-<img width="1033" alt="スクリーンショット 2022-04-01 15 42 45" src="https://user-images.githubusercontent.com/80142183/161210088-d5655beb-8101-48a8-9edd-a86af9956804.png">
-・DBに保存された内容を一覧表示。（.map）
+<img width="916" alt="スクリーンショット 2022-04-01 15 43 16" src="https://user-images.githubusercontent.com/80142183/161210279-1f8d1ae0-0db4-499c-a596-6b894f52cd97.png">
+・3項目を「動画編集に」更新処理できる
+
+### Delete（D）
+<img width="916" alt="スクリーンショット 2022-04-01 15 43 16" src="https://user-images.githubusercontent.com/80142183/161210279-1f8d1ae0-0db4-499c-a596-6b894f52cd97.png">
+・3項目を「動画編集に」更新処理できる
 
 
 
