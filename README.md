@@ -35,16 +35,11 @@
 ### Delete（D）
 <img width="916" alt="スクリーンショット 2022-04-01 15 43 16" src="https://user-images.githubusercontent.com/80142183/161210279-1f8d1ae0-0db4-499c-a596-6b894f52cd97.png">
 ・3項目を「動画編集に」更新処理できる
+<img width="1018" alt="スクリーンショット 2022-04-01 15 43 52" src="https://user-images.githubusercontent.com/80142183/161210509-0b6fb7d6-1bff-4d28-8907-9699d4e81ebb.png">
+・「佐々木久美」の欄を削除
 
+## Larabelを使用するメリット
 
-
-
-
-## react-scrollを使用したスクロール機能
-
-
-・ページをリッチにするための工夫
-## django rest_frameworkによるバックエンド管理・REST APIサービスの利用（PRACTICE部分）
 
 
 
