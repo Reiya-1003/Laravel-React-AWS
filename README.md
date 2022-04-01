@@ -22,11 +22,15 @@
 ## 基本的なCRUD処理
 ### Create（C）
 <img width="602" alt="スクリーンショット 2022-04-01 15 42 15" src="https://user-images.githubusercontent.com/80142183/161209940-f86dd7a8-41dc-4479-8c5f-fd0f0b9f7b8e.png">
-・「開発」の欄をCreate
+・「機能実装」の欄をCreate
 
 ### Read（R）
-<img width="602" alt="スクリーンショット 2022-04-01 15 42 15" src="https://user-images.githubusercontent.com/80142183/161209940-f86dd7a8-41dc-4479-8c5f-fd0f0b9f7b8e.png">
-・「開発」の欄をCreate
+<img width="1033" alt="スクリーンショット 2022-04-01 15 42 45" src="https://user-images.githubusercontent.com/80142183/161210088-d5655beb-8101-48a8-9edd-a86af9956804.png">
+・DBに保存された内容を一覧表示。（.map）
+
+### Update（U）
+<img width="1033" alt="スクリーンショット 2022-04-01 15 42 45" src="https://user-images.githubusercontent.com/80142183/161210088-d5655beb-8101-48a8-9edd-a86af9956804.png">
+・DBに保存された内容を一覧表示。（.map）
 
 
 
