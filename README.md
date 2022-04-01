@@ -1,32 +1,48 @@
+# ページ概要
+
+
+
+リンク先：https://portforio-reru.vercel.app/
+
+# 使用言語
+* React.js  17.0.2
+* Python  3.9
+* Django  3.1.2
+* django rest_framework
+* cors 
+* sqlite3
+
+# アーキテクチャ
+　　
+  
+
+  
+# デプロイ
+* フロントエンド　→ Vercel
+* バックエンド　→ pythonanywhere
+* cors → heroku (axiosでfetchする際にリクエストエラーが起きるため必要)
 
 
 
 
+# 機能面
+## Sassによるページデザイン
+
+
+・主にアニメーションをつけるのに役立つ。
 
 
 
+## react-scrollを使用したスクロール機能
+
+
+・ページをリッチにするための工夫
+## django rest_frameworkによるバックエンド管理・REST APIサービスの利用（PRACTICE部分）
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 今後
+デザイン・機能含めアップデートを予定。今後開発や経験が増えていくにつれ、当ページもアップデートしていく。
 
 
 
