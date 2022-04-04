@@ -4,7 +4,7 @@
 
 
 
-# 使用言語・ツール
+## 使用言語・ツール
 * React.js  17.0.2
 * PHP  8.0.2
 * Laravel 9.0
@@ -13,44 +13,44 @@
 * Docker (ローカル開発環境の構築)
 
 
-# アーキテクチャ
+## アーキテクチャ
 　　<img width="851" alt="スクリーンショット 2022-04-01 15 22 50" src="https://user-images.githubusercontent.com/80142183/161206918-2a7ec4e7-ada1-4bf5-a59e-a974c1193f56.png">
   
 
 
-# 機能面
-## 基本的なCRUD処理
-### Create（C）
+## 機能面
+### 基本的なCRUD処理
+#### Create（C）
 <img width="602" alt="スクリーンショット 2022-04-01 15 42 15" src="https://user-images.githubusercontent.com/80142183/161209940-f86dd7a8-41dc-4479-8c5f-fd0f0b9f7b8e.png">
 ・「機能実装」の欄をCreateします。
 
-### Read（R）
+#### Read（R）
 <img width="1033" alt="スクリーンショット 2022-04-01 15 42 45" src="https://user-images.githubusercontent.com/80142183/161210088-d5655beb-8101-48a8-9edd-a86af9956804.png">
 ・DBに保存された内容を一覧表示します。（.map）
 
-### Update（U）
+#### Update（U）
 <img width="916" alt="スクリーンショット 2022-04-01 15 43 16" src="https://user-images.githubusercontent.com/80142183/161210279-1f8d1ae0-0db4-499c-a596-6b894f52cd97.png">
 ・3項目を「動画編集に」更新処理できます。
 
-### Delete（D）
+#### Delete（D）
 <img width="1018" alt="スクリーンショット 2022-04-01 15 43 52" src="https://user-images.githubusercontent.com/80142183/161210509-0b6fb7d6-1bff-4d28-8907-9699d4e81ebb.png">
 ・「佐々木久美」の欄を削除します。
 
 
-## テストライブラリ　PHPUnit
+### テストライブラリ　PHPUnit
 <img width="1378" alt="スクリーンショット 2022-04-01 17 03 39" src="https://user-images.githubusercontent.com/80142183/161221795-c5b430ef-32d5-4d46-b5f1-2c1d417e884a.png">
 * 今回は単体テストのみ実施しています。
 * 標準搭載されているテストライブラリです。
 
 
-## Larabelを使用するメリット
+### Larabelを使用するメリット
 * MVCモデルとはプログラムの処理をModer（処理）・View（表示）・Controller（全体制御）の3つの要素に分割し、機能ごとに開発を行なうことで作業効率とクオリティーが向上し、分野ごとに異なった専門性に特化しているため高度なバグ修正やトラブルにも柔軟に対応できるといったメリットがあリます。
 * MigrationとEloquent　ORMによってDB操作が容易です。
 * 今後フルスタックな開発をする際、バックエンドとフロントエンドの繋がりが分かりやすいです。
 
 
 
-## Dockerを使用した環境構築
+### Dockerを使用した環境構築
 
 
 
@@ -62,7 +62,7 @@
 
 
 
-## AWSによるデプロイ
+### AWSによるデプロイ
 <img width="631" alt="スクリーンショット 2022-04-01 17 00 02" src="https://user-images.githubusercontent.com/80142183/161221214-8183362c-ed61-4f32-9773-89356bf7dd91.png">
 * 上記画像が、AWSのデプロイアーキテクチャです。
 * 今回使用したのはEC２のみです。
